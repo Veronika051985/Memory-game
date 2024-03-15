@@ -20,7 +20,7 @@ body {
 
 /*page title*/
 .page-title {
-  color: #FF6D00;
+  color: #d40707;
   font-family: 'Rubik Spray Paint', cursive;
   font-weight: normal;
   text-align: center;
@@ -35,7 +35,7 @@ body {
 }
 /*game info*/
 .game-info {
-  color: #FFBB89;
+  color: #d40707;
   font-size: 4em;
 }
 /*game*/
@@ -84,7 +84,7 @@ body {
 
 .card-back {
   background-color: black;
-  border-color: #FF6D00;
+  border-color: #d40707;
   transform: rotateY(0); 
 }
 
@@ -144,7 +144,7 @@ body {
 }
 /*card front*/
 .card-front {
-  background-color: #FFBB89;
+  background-color: #d40707;
   border-color: #333;
   transform: rotateY(180deg);
 }
@@ -160,7 +160,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: #FF6D00;
+  color: #d40707;
   font-family: 'Rubik Spray Paint', cursive;
   transition: background-color 500ms, font-size 500ms;
 }
@@ -220,7 +220,7 @@ body {
     height: 32px;
   }
   .page-title {
-    color: #FF6D00;
+    color: #d40707;
     font-family: 'Rubik Spray Paint', cursive;
     font-weight: normal;
     text-align: center;
