@@ -5,8 +5,8 @@
 
 [View live site here](https://laidybird.github.io/Memory-game/)
 
-The aim of this game is to provide a responsive, easy to use and easy to learn website that is aesthetically pleasing and entertaining for to the users.I wanted the game to be easy to play and have a good layout. The Game can be played by all ages. The reason I choose the Halloween theame is that I think its fun and allso has a referance to Transilvania a place that it means a lot to me.
-This Game was build as a Milestone project #2 (Java script Esentials) for Diploma in Full Stack Development at Code Institute.The theame of the Game is Halloween. 
+The aim of this game is to provide a responsive, easy to use and easy to learn website that is aesthetically pleasing and entertaining for the users. I wanted the game to be easy to play and have a good layout. The game can be played by all ages. I chose the Halloween theme because I think it's fun and also has a reference to Transylvania, a place that means a lot to me.
+This game was built as Milestone Project #2 (JavaScript Essentials) for the Diploma in Full Stack Development at Code Institute. The theme of the game is Halloween.
 
 ## Tools Used: HTML5, CSS, JAVA SCRIPT.
 
@@ -27,10 +27,10 @@ For the start i've build an overlay page message that guides you to click to sta
 
 ![start](https://user-images.githubusercontent.com/66474546/208389860-ae6d48a7-43aa-43a4-aefc-ed0c4956b132.png)
 
-## Ready to beggin
-To play the Game you have to match the images in 100 seconds. If you match them in 100 seconds or less you win.
-I also create a flip counter that records in how many flips you won.
-![reatdy to beggin](https://user-images.githubusercontent.com/66474546/208390567-15121337-2f97-4c34-83df-365348dc9110.png)
+## Ready to begin
+To play the game you have to match the images in 100 seconds. If you match them in 100 seconds or less you win.
+I also created a flip counter that records how many flips it took you to win.
+![ready to begin](https://user-images.githubusercontent.com/66474546/208390567-15121337-2f97-4c34-83df-365348dc9110.png)
 
 ## Winning the Game
 If you win the game a VICTORY and a Click to Restart message will pop up. This was created as an overlay message.
@@ -87,14 +87,14 @@ It didn't show any errors.
 The performance testing was made in Lighthouse.[Lighthouse](https://www.webpagetest.org/lighthouse)
 ![test](https://user-images.githubusercontent.com/66474546/206859767-d54c29fe-ca50-4580-8836-45961721b80f.png)
 
-# Typoghraphy
+# Typography
 
-For the Typoghraphy I used [Google fonts](https://fonts.google.com/specimen/Rubik+Spray+Paint#styles) and I choosed the Rubik Spray Paint font as I belive it has a bit of dramatic look and it meets the criteria I choose to follow for the Game. Also has a clean easy to read style.
+For the typography I used [Google Fonts](https://fonts.google.com/specimen/Rubik+Spray+Paint#styles) and chose the Rubik Spray Paint font as I believe it has a bit of a dramatic look and meets the criteria I chose to follow for the game. It also has a clean, easy to read style.
 
-# Colors 
+# Colors
 
-The colors I chose it had to meet the criteria of the Game but still be nice and pleasant for the users eyes.
-For the Game title and overay Messages I used #FF6D00 and for the game timmer and flips I used #FFBB89.
+The colors I chose had to meet the criteria of the game but still be nice and pleasant for the users' eyes.
+For the game title and overlay messages I used #FF6D00, and for the game timer and flips I used #FFBB89.
 
 # Future Features
 

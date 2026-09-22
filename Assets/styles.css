@@ -8,7 +8,7 @@
 
 html {
   min-height: 100vh;
-  cursor: url("Assets/Ghost.cur"), auto;
+  cursor: url("Ghost.cur"), auto;
   font-family: 'Rubik Spray Paint', cursive;
 }
 
@@ -29,7 +29,6 @@ body {
 
 /*game info container*/
 .game-info-container {
-  grid-column: 1 / -1;
   display: flex;
   justify-content: space-between;
 }
@@ -41,6 +40,10 @@ body {
 /*game*/
 .game-container {
   margin: 50px auto;
+  width: fit-content;
+}
+/*card grid*/
+.game-container-grid {
   display: grid;
   grid-template-columns: repeat(4, auto);
   grid-gap: 10px;
@@ -50,9 +53,15 @@ body {
 /*card*/
 .card {
   position: relative;
-  cursor: url("Assets/GhostHover.cur"), auto;
+  cursor: url("GhostHover.cur"), auto;
   height: 175px;
   width: 125px;
+}
+
+.card:focus-visible,
+.overlay-text:focus-visible {
+  outline: 3px solid #ffbb89;
+  outline-offset: 3px;
 }
 /*card face*/
 .card-face {
@@ -198,12 +207,12 @@ body {
 }
 /*adding media query*/
 @media (max-width: 600px) {
-  .game-container {
+  .game-container-grid {
     grid-template-columns: repeat(4, auto)
   }
   .card {
     position: relative;
-    cursor: url("Assets/GhostHover.cur"), auto;
+    cursor: url("GhostHover.cur"), auto;
     height: 85px;
     width: 75px;
     border-radius: 5px;

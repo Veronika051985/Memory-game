@@ -1,3 +1,5 @@
+const CARD_VALUES = ['Bat', 'Bones', 'Cauldron', 'Eye', 'Skull', 'Pumpkin', 'Ghost', 'Dracula'];
+
 class AudioController {
     constructor() {
         this.bgMusic = new Audio('Assets/creepy.mp3');
@@ -8,26 +10,32 @@ class AudioController {
         this.bgMusic.volume = 0.5;
         this.bgMusic.loop = true;
     }
+    play(sound) {
+        // play() returns a promise that rejects if the browser blocks
+        // autoplay or the user has no interacted with the page yet.
+        sound.currentTime = 0;
+        sound.play().catch(() => {});
+    }
     startMusic() {
-        this.bgMusic.play();
+        this.bgMusic.play().catch(() => {});
     }
     stopMusic() {
         this.bgMusic.pause();
         this.bgMusic.currentTime = 0;
     }
     flip() {
-        this.flipSound.play();
+        this.play(this.flipSound);
     }
     match() {
-        this.matchSound.play();
+        this.play(this.matchSound);
     }
     victory() {
         this.stopMusic();
-        this.victorySound.play();
+        this.play(this.victorySound);
     }
     gameOver() {
         this.stopMusic();
-        this.gameOverSound.play();
+        this.play(this.gameOverSound);
     }
 }
 
@@ -104,7 +112,7 @@ class MixOrMatch {
     checkForCardMatch(card) {
         if(this.getCardType(card) === this.getCardType(this.cardToCheck))
             this.cardMatch(card, this.cardToCheck);
-        else 
+        else
             this.cardMismatch(card, this.cardToCheck);
 
         this.cardToCheck = null;
@@ -143,6 +151,33 @@ class MixOrMatch {
     }
 }
 
+// Builds the card grid from CARD_VALUES instead of duplicating markup
+// for every card in index.html.
+function buildCards() {
+    const grid = document.getElementById('card-grid');
+    const template = document.getElementById('card-template');
+    const values = [...CARD_VALUES, ...CARD_VALUES];
+
+    values.forEach(value => {
+        const card = template.content.cloneNode(true).firstElementChild;
+        const image = card.querySelector('.card-value');
+        image.src = `Assets/images/${value}.png`;
+        image.alt = '';
+        grid.appendChild(card);
+    });
+
+    return Array.from(grid.getElementsByClassName('card'));
+}
+
+function activateOnEnterOrSpace(handler) {
+    return event => {
+        if(event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            handler();
+        }
+    };
+}
+
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready);
 } else {
@@ -151,19 +186,21 @@ if (document.readyState == 'loading') {
 
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
-    let cards = Array.from(document.getElementsByClassName('card'));
+    let cards = buildCards();
     let game = new MixOrMatch(100, cards);
 
     overlays.forEach(overlay => {
-        overlay.addEventListener('click', () => {
+        const start = () => {
             overlay.classList.remove('visible');
             game.startGame();
-        });
+        };
+        overlay.addEventListener('click', start);
+        overlay.addEventListener('keydown', activateOnEnterOrSpace(start));
     });
 
     cards.forEach(card => {
-        card.addEventListener('click', () => {
-            game.flipCard(card);
-        });
+        const flip = () => game.flipCard(card);
+        card.addEventListener('click', flip);
+        card.addEventListener('keydown', activateOnEnterOrSpace(flip));
     });
 }
